@@ -1,0 +1,57 @@
+git add 文件名或者目录都可以
+
+git commit -m '版本1'
+
+#### 编辑完文件或者目录后需要先add 然后才用 commit 提交
+
+git status
+
+#### 撤销修改 code.txt 是被修改的文件名，没有add文件名的情况下直接用这个命令
+git checkout -- code.txt
+
+#### 如果文件名已经add了，就需要操作这步
+git reset HEAD code.txt
+
+#### 如果已经commit 提交了，只能用版本回退
+git reset -- hard HEAD^
+
+#### 找出不同版本的不同代码
+git diff HEAD^ HEAD -- code.txt
+
+#### 删掉一个文件然后找回来
+git checkout -- code.txt
+
+#### 彻底删除一个文件
+1，rm code.txt
+
+2,git rm code.txt
+
+3, git commit -m '删除code.txt'
+
+#### 版本简短显示
+git log --pretty=online
+
+#### 创建分支dev
+git checkout -b dev
+
+#### 切换到分支master
+git checkout master
+
+#### 本地创建SSH
+1. ssh-keygen -t rsa -C 'mihaodan@aliyun.com'
+2. cd .ssh
+3. cat id_rsa.pub
+4. 复制密钥
+
+#### 如何提交代码
+1. git add 代码文件
+2. git commit -m '创建某某文件'
+3. git push origin master
+
+
+#### 删除git远程上的代码
+1.  rm -r Git\ 原理详解及实用指南/
+2.  git rm -r Git\ 原理详解及实用指南/
+3.  git commit -m '删除git文件夹'
+4.  git push origin master
+5.  上面的是删除文件夹的方法，删除单个文件去掉-r
